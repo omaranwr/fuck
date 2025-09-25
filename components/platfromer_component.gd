@@ -3,6 +3,18 @@ class_name PlatformerComponent
 
 signal stopped_controlling_itself
 
+@export var root : CharacterBody2D
+@export var node_to_flip : Node2D
+
+@export var lock_movement : bool = false
+@export var lock_control : bool = false
+@export var lock_direction : bool = false
+
+@export var params : MovingEntityStats:
+	set(resource):
+		params = resource
+		_setup_from_resource(resource)
+
 var velocity : Vector2 = Vector2.ZERO
 
 var SECONDS_TO_MAX_SPEED := .9:
@@ -50,10 +62,10 @@ var MAX_SPEED_JUMP_INCREASE := .1
 var JUMP_VELOCITY := 400.0
 var MAX_JUMP_VELOCITY := 600.0
 
-var direction : float = 0
+var direction : float = 0:
+	set(value):
+		if not lock_direction: direction = value
 
-var lock_movement : bool = false
-var lock_control : bool = false
 
 var should_control_itself : bool = true:
 	set(value):
@@ -62,11 +74,6 @@ var should_control_itself : bool = true:
 			stopped_controlling_itself.emit()
 
 var velocity_increase: Vector2 = Vector2.ZERO
-
-@export var params : MovingEntityStats:
-	set(resource):
-		params = resource
-		_setup_from_resource(resource)
 
 func _setup_from_resource(resource: MovingEntityStats) -> void:
 	if resource != null:
@@ -81,6 +88,14 @@ func _setup_from_resource(resource: MovingEntityStats) -> void:
 
 
 func _ready() -> void: _setup_from_resource(params)
+
+func _physics_process(delta: float) -> void:
+	if node_to_flip and direction != 0:
+		node_to_flip.scale.x = sign(direction)
+	if root: 
+		root.velocity = calculate(delta, root.is_on_floor())
+		root.move_and_slide()
+		velocity = root.velocity
 
 
 func calculate(delta: float, is_on_floor: bool = true, is_on_wall: bool = false) -> Vector2:

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=4 uid="uid://c8ood3um77ha2"]
 
-[ext_resource type="Script" uid="uid://dov6htdgkaehc" path="res://custom_nodes/chunk_tree.gd" id="1_71j4m"]
+[ext_resource type="Script" uid="uid://dov6htdgkaehc" path="res://custom_nodes/chunks/chunk_tree.gd" id="1_71j4m"]
 [ext_resource type="PackedScene" uid="uid://vtu5t8ntd5gu" path="res://scenes/rooms/starting_lobby.tscn" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dp7cfri05k053" path="res://scenes/rooms/jolin_section.tscn" id="3_i7141"]
-[ext_resource type="Script" uid="uid://b56pjf3htt422" path="res://custom_nodes/chunk_room.gd" id="4_4mrxx"]
+[ext_resource type="Script" uid="uid://b56pjf3htt422" path="res://custom_nodes/chunks/chunk_room.gd" id="4_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://b0x01ew66hs6e" path="res://scenes/tilemaps/tiles.tscn" id="5_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://dsm02n73ad3fq" path="res://scenes/Player/player.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://8ihjb88qd8bw" path="res://scenes/ui_scenes/new folder/hotbar.tscn" id="7_i7141"]

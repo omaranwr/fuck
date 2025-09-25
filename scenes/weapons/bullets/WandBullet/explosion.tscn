@@ -125,6 +125,7 @@ collision_mask = 18
 script = ExtResource("1_ulkcy")
 damage = 30.0
 type = 1
+hit_type = 1
 metadata/_custom_type_script = "uid://23o3anl36fh2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

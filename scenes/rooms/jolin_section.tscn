@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=4 uid="uid://dp7cfri05k053"]
 
-[ext_resource type="Script" uid="uid://b56pjf3htt422" path="res://custom_nodes/chunk_room.gd" id="1_6wss1"]
+[ext_resource type="Script" uid="uid://b56pjf3htt422" path="res://custom_nodes/chunks/chunk_room.gd" id="1_6wss1"]
 [ext_resource type="PackedScene" uid="uid://b0x01ew66hs6e" path="res://scenes/tilemaps/tiles.tscn" id="2_skmf2"]
 
 [node name="JolinSection" type="Node2D"]

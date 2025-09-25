@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://vtu5t8ntd5gu"]
 
-[ext_resource type="Script" uid="uid://b56pjf3htt422" path="res://custom_nodes/chunk_room.gd" id="1_1wug3"]
+[ext_resource type="Script" uid="uid://b56pjf3htt422" path="res://custom_nodes/chunks/chunk_room.gd" id="1_1wug3"]
 [ext_resource type="PackedScene" uid="uid://b0x01ew66hs6e" path="res://scenes/tilemaps/tiles.tscn" id="3_k7hyg"]
 [ext_resource type="PackedScene" uid="uid://dk72f5fho25b4" path="res://scenes/AbstractItem/abstract_item.tscn" id="4_qrjrb"]
 [ext_resource type="Resource" uid="uid://bgpoef4ytku2l" path="res://Recources/InvWeapons/flash_light.tres" id="5_htilh"]

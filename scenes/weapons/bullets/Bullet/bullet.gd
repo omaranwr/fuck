@@ -3,7 +3,7 @@ extends HitBox
 var SPEED: int = 600
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	position += transform.x * SPEED * delta
 
 

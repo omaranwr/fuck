@@ -5,14 +5,22 @@ signal started_invisibility
 signal stopped_invisibility
 
 @export var health_component : HealthComponent
+@export var platformer_component : PlatformerComponent
 @export var invisibility_time : float = 0.5
 @export var invisible_to : Array[Globals.HitboxTypes] = []
 
+var default_mask: int
+@export var activated: bool = true:
+	set(value):
+		activated = value
+		if value: collision_mask = default_mask
+		else: collision_mask = 0
+		
 var invisibility_timer : SceneTreeTimer
 var is_invisible: bool = false:
 	set(value):
 		is_invisible = value
-		_disable_collisions(value)
+		activated = not value
 		if value: 
 			started_invisibility.emit()
 			invisibility_timer = get_tree().create_timer(invisibility_time)
@@ -27,6 +35,7 @@ func _set_up_invisibility_timer() -> void:
 	)
 
 func _ready() -> void:
+	default_mask = collision_mask
 	area_entered.connect(_on_area_entered)
 
 func _process(delta: float) -> void:
@@ -52,10 +61,14 @@ func _consider_hitbox(hitbox: HitBox, delta: float = 1):
 	
 	if health_component:
 		health_component.health -= hitbox.damage * delta
-	if not type == HitBox.HitTypes.PROLONGED:
+	if type == HitBox.HitTypes.ONE_SHOT:
+		take_recoil(hitbox)
 		is_invisible = true
 
-func _disable_collisions(value: bool = true):
-	for child in get_children():
-		if child is CollisionShape2D or child is CollisionPolygon2D:
-			child.set_deferred('disabled', value)
+
+func take_recoil(hitbox: HitBox):
+	var recoil_direction = (
+		global_position 
+		- hitbox.global_position).normalized()
+	if platformer_component: 
+		platformer_component.insta_push(recoil_direction, hitbox.recoil)

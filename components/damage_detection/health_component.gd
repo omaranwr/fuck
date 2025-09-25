@@ -6,6 +6,9 @@ signal died
 signal health_changed(new_health: float)
 
 var previous_health: float = 0
+
+@export var root : Node
+
 @export var idle_healing: float = 0
 
 @export var max_health: float
@@ -20,6 +23,7 @@ var previous_health: float = 0
 		
 		if value <= min_health:
 			died.emit()
+			if root: root.queue_free()
 		health_changed.emit(health)
 
 
