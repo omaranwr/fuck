@@ -24,5 +24,6 @@ var areas_hit: int = 0
 
 func _ready() -> void:
 	default_layer = collision_layer
+	activated = activated
 	monitoring = false
 	if recoil < 0: recoil = damage*20
