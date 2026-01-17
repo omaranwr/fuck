@@ -7,10 +7,21 @@
 
 [sub_resource type="Animation" id="Animation_aqttx"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ukam1"]
 resource_name = "appear"
-length = 0.7
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -19,7 +30,7 @@ tracks/0/path = NodePath("CenterContainer/ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0.5, 0.85),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -31,7 +42,7 @@ tracks/1/path = NodePath("CenterContainer/allDisplayContainer:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0.35, 0.65),
 "transitions": PackedFloat32Array(2, 0.5),
 "update": 1,
 "values": [false, true]
@@ -43,10 +54,22 @@ tracks/2/path = NodePath("CenterContainer/allDisplayContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.7),
+"times": PackedFloat32Array(0.4, 1),
 "transitions": PackedFloat32Array(2, 2),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer/ColorRect2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ppsqo"]
@@ -206,6 +229,11 @@ custom_minimum_size = Vector2(960, 640)
 layout_mode = 2
 color = Color(0.0313726, 0.0313726, 0.0313726, 0.529412)
 
+[node name="ColorRect2" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(960, 640)
+layout_mode = 2
+color = Color(0, 0, 0, 0.5294118)
+
 [node name="allDisplayContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
@@ -213,9 +241,7 @@ theme_override_constants/separation = 100
 [node name="Label" type="Label" parent="CenterContainer/allDisplayContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.180392, 0.188235, 0.215686, 1)
-theme_override_colors/font_shadow_color = Color(0.921569, 0.898039, 0.807843, 1)
-theme_override_colors/font_outline_color = Color(0.921569, 0.898039, 0.807843, 1)
+theme_override_colors/font_color = Color(0.92156863, 0.8980392, 0.80784315, 1)
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("1_hdeny")
 theme_override_font_sizes/font_size = 80
@@ -319,8 +345,9 @@ color = Color(0, 0, 0, 0.862745)
 custom_minimum_size = Vector2(20, 300)
 layout_mode = 2
 texture = ExtResource("4_aqttx")
-region_rect = Rect2(0, 229, 32, 27)
+region_rect = Rect2(0, 224, 32, 32)
 patch_margin_left = 5
+patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 

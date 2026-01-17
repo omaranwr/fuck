@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dsm02n73ad3fq"]
+[gd_scene load_steps=20 format=3 uid="uid://dsm02n73ad3fq"]
 
 [ext_resource type="Script" uid="uid://c1ct174crq0o8" path="res://scenes/Player/player.gd" id="1_4vkt4"]
 [ext_resource type="Resource" uid="uid://hl3piymcr4vy" path="res://Recources/MovingEntityParams/player.tres" id="2_dl1wr"]
@@ -15,160 +15,155 @@
 
 [sub_resource type="Animation" id="Animation_uxo23"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, -2)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Eyes:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, -1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/Eyes:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.001),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
+
+[sub_resource type="Animation" id="Animation_t6q27"]
+resource_name = "idle"
+step = 0.05
 
 [sub_resource type="Animation" id="Animation_7tfl1"]
-resource_name = "blink"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Eyes:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.233333, 0.566667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0), Vector2(1, 0), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_jxtnq"]
-resource_name = "idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Eyes:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.4, 0.733333, 0.8, 0.966667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, -1), Vector2(2, -3), Vector2(2, -3), Vector2(2, -1), Vector2(2, -1), Vector2(1, -1)]
-}
-
-[sub_resource type="Animation" id="Animation_wwtew"]
 resource_name = "look_left"
-length = 0.15
+length = 0.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:scale")
+tracks/0/path = NodePath("sprites/body:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(0.5, 2),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(-1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body:position")
+tracks/1/path = NodePath("sprites/mask:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
 "update": 0,
-"values": [Vector2(1, -2), Vector2(-1, -2)]
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprites/body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(0, -4), Vector2(0, -4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprites/feet:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sprites/feet:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(0, 3), Vector2(0, 3)]
 }
 
-[sub_resource type="Animation" id="Animation_n7rn1"]
+[sub_resource type="Animation" id="Animation_jxtnq"]
 resource_name = "look_right"
-length = 0.15
+length = 0.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:scale")
+tracks/0/path = NodePath("sprites/body:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(0.5, 2),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
 "update": 0,
 "values": [Vector2(-1, 1), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body:position")
+tracks/1/path = NodePath("sprites/mask:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
 "update": 0,
-"values": [Vector2(-1, -2), Vector2(1, -2)]
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprites/body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(0, -4), Vector2(0, -4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprites/feet:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sprites/feet:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(0, 3), Vector2(0, 3)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7tfl1"]
 _data = {
 &"RESET": SubResource("Animation_uxo23"),
-&"blink": SubResource("Animation_7tfl1"),
-&"idle": SubResource("Animation_jxtnq"),
-&"look_left": SubResource("Animation_wwtew"),
-&"look_right": SubResource("Animation_n7rn1")
+&"idle": SubResource("Animation_t6q27"),
+&"look_left": SubResource("Animation_7tfl1"),
+&"look_right": SubResource("Animation_jxtnq")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dl1wr"]
-radius = 4.0
-height = 13.0
+radius = 4.5
+height = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxo23"]
-size = Vector2(7, 12)
+size = Vector2(8, 13)
 
 [node name="player" type="CharacterBody2D"]
 collision_mask = 26
@@ -196,20 +191,34 @@ libraries = {
 &"": SubResource("AnimationLibrary_7tfl1")
 }
 
-[node name="Body" type="Sprite2D" parent="."]
-position = Vector2(1, -2)
-texture = ExtResource("3_uklsp")
-region_enabled = true
-region_rect = Rect2(9, 9, 13, 17)
+[node name="sprites" type="Node2D" parent="."]
 
-[node name="Eyes" type="Sprite2D" parent="Body"]
-position = Vector2(1, -1)
+[node name="feet" type="Sprite2D" parent="sprites"]
+position = Vector2(0, 3)
+rotation = -3.1415925
 texture = ExtResource("3_uklsp")
 region_enabled = true
-region_rect = Rect2(0, 0, 5, 2)
+region_rect = Rect2(19, 28, 11, 4)
+
+[node name="body" type="Sprite2D" parent="sprites"]
+position = Vector2(0, -4)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_uklsp")
+offset = Vector2(0.5, 0.5)
+region_enabled = true
+region_rect = Rect2(2, 8, 12, 18)
+
+[node name="mask" type="Sprite2D" parent="sprites"]
+position = Vector2(0, -6)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_uklsp")
+offset = Vector2(0.5, 0.5)
+region_enabled = true
+region_rect = Rect2(18, 8, 10, 8)
 
 [node name="WeaponShell" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 z_index = 6
 script = ExtResource("8_frnkk")
 
@@ -217,7 +226,7 @@ script = ExtResource("8_frnkk")
 position = Vector2(7, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -2)
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_dl1wr")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
@@ -259,7 +268,7 @@ health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://c3aifbheqy0ru"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0.5, -2)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_uxo23")
 
 [node name="Camera2D" type="Camera2D" parent="."]
